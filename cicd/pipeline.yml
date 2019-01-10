@@ -1,0 +1,16 @@
+---
+resources:
+- name: resource-inschrijving-product
+  type: git
+  source:
+    branch: develop
+    uri: https://github.com/sadema/product.git
+
+jobs:
+- name: build
+  public: true
+  plan:
+  - get: resource-inschrijving-product
+    trigger: true
+  - task: build-code
+    file: resource-inschrijving-product/cicd/build/task_buildcode.yml
