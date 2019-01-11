@@ -8,6 +8,7 @@ image_resource:
 
 inputs:
 - name: resource-inschrijving-product
+- name: m2
 outputs:
 - name: artifacts
 

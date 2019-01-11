@@ -5,12 +5,19 @@ resources:
   source:
     branch: develop
     uri: https://github.com/sadema/product.git
+- name: m2
+  type: docker-image
+  source:
+    repository: sadema/m2
+    tag: 1.0.0
 
 jobs:
 - name: build
   public: true
   plan:
-  - get: resource-inschrijving-product
-    trigger: true
+  - aggregate:
+    - get: resource-inschrijving-product
+      trigger: true
+    - get: m2
   - task: build-code
     file: resource-inschrijving-product/cicd/build/task_buildcode.yml
