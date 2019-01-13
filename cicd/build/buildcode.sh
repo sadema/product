@@ -18,6 +18,8 @@ cat > ${MVN_SETTINGS} << EOF
       <localRepository>${M2_LOCAL}/repository</localRepository>
 </settings>
 
+EOF
+
 cd ${PWD}/resource-inschrijving-product
 cat ${MVN_SETTINGS}
 mvn -s ${MVN_SETTINGS} clean package
