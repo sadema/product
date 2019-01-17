@@ -10,6 +10,14 @@ resources:
   source:
     repository: sadema/m2
     tag: 1.0.0
+- name: inschrijving-product-docker-image
+  type: docker-image
+  source:
+#    email: ((docker-hub-email))
+#    username: ((docker-hub-username))
+#    password: ((docker-hub-password))
+    repository: ((docker-hub-username))/inschrijving-product
+    tag: 1.0.0
 
 jobs:
 - name: build
@@ -21,3 +29,17 @@ jobs:
     - get: m2
   - task: build-code
     file: resource-inschrijving-product/cicd/build/task_buildcode.yml
+  - task: create-docker-build-env
+    file: resource-inschrijving-product/cicd/docker-image/task_create-docker-build-env.yml
+  - put: inschrijving-product-docker-image
+    params:
+      build: workspace
+
+#- name: publish
+#  public: true
+#  plan:
+#  - aggregate:
+#    - get: artifacts
+#      passed: [build]
+#  - task: create-docker-image
+#    file: resource-inschrijving-product/cicd/docker-image/task_create-docker-image.yml

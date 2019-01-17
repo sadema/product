@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: product-pod
+  namespace: default
+spec:
+  containers:
+    name: product
+    image: sadema/product
+    ports:
+      - containerPort: 8083
