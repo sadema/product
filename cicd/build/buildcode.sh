@@ -22,5 +22,5 @@ EOF
 
 cd ${PWD}/resource-inschrijving-product
 cat ${MVN_SETTINGS}
-mvn -s ${MVN_SETTINGS} clean package
+mvn -s ${MVN_SETTINGS} -DskipTests clean package
 cp -a target/* ../artifacts/
