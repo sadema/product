@@ -6,9 +6,8 @@ image_resource:
     repository: maven
     tag: 3.6.0-jdk-8-alpine
 
-#inputs:
-#- name: resource-inschrijving-product
-#- name: artifacts
+inputs:
+- name: workspace
 
 run:
   path: echo
