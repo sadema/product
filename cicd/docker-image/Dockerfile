@@ -1,3 +1,3 @@
 FROM openjdk:8-alpine
-COPY artifacts/product-0.1.0.jar /tmp
+COPY artifacts/product-0.1.1-SNAPSHOT.jar /tmp
 CMD sh
