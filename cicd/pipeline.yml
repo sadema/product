@@ -13,9 +13,9 @@ resources:
 - name: inschrijving-product-docker-image
   type: docker-image
   source:
-#    email: ((docker-hub-email))
-#    username: ((docker-hub-username))
-#    password: ((docker-hub-password))
+    email: ((docker-hub-email))
+    username: ((docker-hub-username))
+    password: ((docker-hub-password))
     repository: ((docker-hub-username))/inschrijving-product
     tag: 1.0.0
 
